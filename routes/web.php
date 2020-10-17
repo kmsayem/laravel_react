@@ -14,3 +14,5 @@
 Route::get('/{path?}', function () {
     return view('home');
 });
+
+// Auth::routes();

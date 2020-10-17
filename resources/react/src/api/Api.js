@@ -1,20 +1,24 @@
 import React from "react";
 import axios from "axios";
-import notification from "App/components/notification";
-import { store } from "redux/store";
-import authActions from "redux/auth/actions";
-import { isObject } from "../lib";
+import notification from "@/App/components/notification";
+import { store } from "../redux/store";
+// import authActions from "redux/auth/actions";
+// import { isObject } from "../lib";
 const cancelTokenSource = axios.CancelToken.source();
 let isAlreadyFetchingAccessToken = false;
 let subscribers = [];
 
 const instance = axios.create({
   // .. where we make our configurations
-  baseURL: process.env.REACT_APP_API_ENDPOINT //'http://dev.bol.strativ-support.se/'
+  baseURL: 'http://127.0.0.1:8000/api/'
 });
 
+const set_token = () => {
+  instance.defaults.headers.common["Authorization"] = `bearer ${localStorage.getItem('id_token')}`;
+}
+set_token();
 // Where you would set stuff like your 'Authorization' header, etc ...
-instance.defaults.headers.common["Content-Type"] = "application/json";
+// instance.defaults.headers.common["Content-Type"] = "application/json";
 // Also add/ configure interceptors && all the other cool stuff
 
 // instance.interceptors.request...
@@ -43,7 +47,7 @@ instance.interceptors.response.use(
           store.dispatch(authActions.login(response.data));
           originalRequest.headers[
             "Authorization"
-          ] = `token ${response.data.token}`;
+          ] = `bearer ${response.data.token}`;
           onAccessTokenFetched(response);
         });
       }

@@ -12,6 +12,7 @@ import appAction from '@/redux/app/actions';
 // import Auth0 from 'helpers/auth0';
 import IntlMessages from '../components/utility/intlMessages';
 import SignInStyleWrapper from './styles/signin.style';
+import api,{ endpoints } from '../../api';
 
 const { login } = authAction;
 const { clearMenu } = appAction;
@@ -28,20 +29,20 @@ class SignIn extends Component {
       this.setState({ redirectToReferrer: true });
     }
   }
-  handleLogin = (token = false) => {
+  handleLogin = (values) => {
     const { login, clearMenu } = this.props;
-    if (token) {
-      login(token);
-    } else {
-      login();
-    }
-    clearMenu();
-    this.props.history.push('/dashboard');
-  };
 
-  onFinish = values => {
-    console.log('Received values of form: ', values);
-    this.handleLogin();
+    api.post(endpoints.auth,values)
+    .then(res=>{
+      const { access_token }  = res.data;
+      login(access_token);
+      api.defaults.headers.common["Authorization"] = `bearer ${access_token}`;
+      clearMenu();
+      this.props.history.push('/dashboard');
+    })
+    .catch(err=>{
+      console.log(err)
+    });
   };
 
   render() {
@@ -63,8 +64,8 @@ class SignIn extends Component {
             </div>
 
             <div className="isoSignInForm">
-              <Form name="signInForm" layout={'vertical'} onFinish={this.onFinish}>
-                <Form.Item name="username" label="Email">
+              <Form name="signInForm" layout={'vertical'} onFinish={this.handleLogin}>
+                <Form.Item name="email" label="Email">
                   <Input type="text" placeholder="Email" />
                 </Form.Item>
                 <Form.Item name="password" label="Password">

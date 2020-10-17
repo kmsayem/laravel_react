@@ -1,9 +1,19 @@
 import React, { Component } from 'react';
 import { Row, Col } from 'antd';
 import basicStyle from '@/settings/basicStyle';
-
+import api,{ endpoints } from '../../../api';
 
 export default class extends Component {
+
+  componentDidMount(){
+    api.get(endpoints.user)
+    .then(res=>{
+      console.log(res.data)
+    })
+    .catch(err=>{
+      console.log(err)
+    });
+  }
   render() {
     const { rowStyle, colStyle } = basicStyle;
     const wisgetPageStyle = {

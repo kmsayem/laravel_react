@@ -19,6 +19,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _redux_app_actions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @/redux/app/actions */ "./resources/react/src/redux/app/actions.js");
 /* harmony import */ var _components_utility_intlMessages__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../components/utility/intlMessages */ "./resources/react/src/App/components/utility/intlMessages.js");
 /* harmony import */ var _styles_signin_style__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./styles/signin.style */ "./resources/react/src/App/Page/styles/signin.style.js");
+/* harmony import */ var _api__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../api */ "./resources/react/src/api/index.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -53,6 +54,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+
 var login = _redux_auth_actions__WEBPACK_IMPORTED_MODULE_5__["default"].login;
 var clearMenu = _redux_app_actions__WEBPACK_IMPORTED_MODULE_6__["default"].clearMenu;
 
@@ -76,27 +78,20 @@ var SignIn = /*#__PURE__*/function (_Component) {
       redirectToReferrer: false
     });
 
-    _defineProperty(_assertThisInitialized(_this), "handleLogin", function () {
-      var token = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+    _defineProperty(_assertThisInitialized(_this), "handleLogin", function (values) {
       var _this$props = _this.props,
           login = _this$props.login,
           clearMenu = _this$props.clearMenu;
+      _api__WEBPACK_IMPORTED_MODULE_9__["default"].post(_api__WEBPACK_IMPORTED_MODULE_9__["endpoints"].auth, values).then(function (res) {
+        var access_token = res.data.access_token;
+        login(access_token);
+        _api__WEBPACK_IMPORTED_MODULE_9__["default"].defaults.headers.common["Authorization"] = "bearer ".concat(access_token);
+        clearMenu();
 
-      if (token) {
-        login(token);
-      } else {
-        login();
-      }
-
-      clearMenu();
-
-      _this.props.history.push('/dashboard');
-    });
-
-    _defineProperty(_assertThisInitialized(_this), "onFinish", function (values) {
-      console.log('Received values of form: ', values);
-
-      _this.handleLogin();
+        _this.props.history.push('/dashboard');
+      })["catch"](function (err) {
+        console.log(err);
+      });
     });
 
     return _this;
@@ -139,9 +134,9 @@ var SignIn = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_4__["Form"], {
         name: "signInForm",
         layout: 'vertical',
-        onFinish: this.onFinish
+        onFinish: this.handleLogin
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_4__["Form"].Item, {
-        name: "username",
+        name: "email",
         label: "Email"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_App_components_uielements__WEBPACK_IMPORTED_MODULE_3__["Input"], {
         type: "text",
@@ -250,6 +245,44 @@ var SignInStyleWrapper = styled_components__WEBPACK_IMPORTED_MODULE_0__["default
   return props['data-rtl'] === 'rtl' ? '0' : 'inherit';
 }, Object(styled_theme__WEBPACK_IMPORTED_MODULE_1__["palette"])('grayscale', 2), Object(styled_theme__WEBPACK_IMPORTED_MODULE_1__["palette"])('color', 5), Object(styled_theme__WEBPACK_IMPORTED_MODULE_1__["palette"])('color', 6), Object(styled_theme__WEBPACK_IMPORTED_MODULE_1__["palette"])('text', 3), Object(styled_theme__WEBPACK_IMPORTED_MODULE_1__["palette"])('primary', 0));
 /* harmony default export */ __webpack_exports__["default"] = (Object(_settings_withDirection__WEBPACK_IMPORTED_MODULE_2__["default"])(SignInStyleWrapper));
+
+/***/ }),
+
+/***/ "./resources/react/src/App/components/feedback/notification.js":
+/*!*********************************************************************!*\
+  !*** ./resources/react/src/App/components/feedback/notification.js ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! antd */ "./node_modules/antd/es/index.js");
+
+/* harmony default export */ __webpack_exports__["default"] = (antd__WEBPACK_IMPORTED_MODULE_0__["notification"]);
+
+/***/ }),
+
+/***/ "./resources/react/src/App/components/notification.js":
+/*!************************************************************!*\
+  !*** ./resources/react/src/App/components/notification.js ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _feedback_notification__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./feedback/notification */ "./resources/react/src/App/components/feedback/notification.js");
+
+
+var createNotification = function createNotification(type, message, description) {
+  _feedback_notification__WEBPACK_IMPORTED_MODULE_0__["default"][type]({
+    message: message,
+    description: description
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (createNotification);
 
 /***/ }),
 
@@ -1446,6 +1479,181 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! antd */ "./node_modules/antd/es/index.js");
 
 /* harmony default export */ __webpack_exports__["default"] = (antd__WEBPACK_IMPORTED_MODULE_0__["Tooltip"]);
+
+/***/ }),
+
+/***/ "./resources/react/src/api/Api.js":
+/*!****************************************!*\
+  !*** ./resources/react/src/api/Api.js ***!
+  \****************************************/
+/*! exports provided: default, cancelTokenSource */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cancelTokenSource", function() { return cancelTokenSource; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _App_components_notification__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/App/components/notification */ "./resources/react/src/App/components/notification.js");
+/* harmony import */ var _redux_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../redux/store */ "./resources/react/src/redux/store.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+
+
+ // import authActions from "redux/auth/actions";
+// import { isObject } from "../lib";
+
+var cancelTokenSource = axios__WEBPACK_IMPORTED_MODULE_1___default.a.CancelToken.source();
+var isAlreadyFetchingAccessToken = false;
+var subscribers = [];
+var instance = axios__WEBPACK_IMPORTED_MODULE_1___default.a.create({
+  // .. where we make our configurations
+  baseURL: 'http://127.0.0.1:8000/api/'
+});
+
+var set_token = function set_token() {
+  instance.defaults.headers.common["Authorization"] = "bearer ".concat(localStorage.getItem('id_token'));
+};
+
+set_token(); // Where you would set stuff like your 'Authorization' header, etc ...
+// instance.defaults.headers.common["Content-Type"] = "application/json";
+// Also add/ configure interceptors && all the other cool stuff
+// instance.interceptors.request...
+
+instance.interceptors.response.use(function (response) {
+  return response;
+}, function (error) {
+  var config = error.config,
+      _error$response = error.response,
+      status = _error$response.status,
+      data = _error$response.data;
+  var originalRequest = config;
+
+  if (status === 401) {
+    if (data.detail === "Invalid Token") {
+      localStorage.removeItem("auth");
+      return window.location.href = "/login";
+    } else if (!isAlreadyFetchingAccessToken) {
+      isAlreadyFetchingAccessToken = true;
+      var auth = JSON.parse(localStorage.getItem("auth"));
+      var value = {
+        token: auth.token
+      };
+      delete instance.defaults.headers.common["Authorization"];
+      _redux_store__WEBPACK_IMPORTED_MODULE_3__["store"].dispatch(authActions.loginAction(value)).then(function (response) {
+        isAlreadyFetchingAccessToken = false;
+        var token = response.data.token;
+        _redux_store__WEBPACK_IMPORTED_MODULE_3__["store"].dispatch(authActions.login(response.data));
+        originalRequest.headers["Authorization"] = "bearer ".concat(response.data.token);
+        onAccessTokenFetched(response);
+      });
+    }
+
+    var retryOriginalRequest = new Promise(function (resolve) {
+      addSubscriber(function (access_token) {
+        resolve(axios__WEBPACK_IMPORTED_MODULE_1___default()(originalRequest));
+      });
+    });
+    return retryOriginalRequest;
+  } else {
+    //if(status === 403)
+    Promise.reject(_objectSpread({}, error))["catch"](function (error) {
+      // let data = error.response.data;
+      if (data.detail) {
+        Object(_App_components_notification__WEBPACK_IMPORTED_MODULE_2__["default"])("error", data.detail);
+      } else if (Array.isArray(data)) {
+        Object(_App_components_notification__WEBPACK_IMPORTED_MODULE_2__["default"])("error", data[0]);
+      } else if (isObject(data)) {
+        Object.keys(data).map(function (key, index) {
+          if (typeof data[key][0] == "string") {
+            Object(_App_components_notification__WEBPACK_IMPORTED_MODULE_2__["default"])("error", data[key][0]);
+          }
+
+          Object.keys(data[key]).map(function (k, i) {
+            if (_typeof(data[key][k]) == "object") {
+              multipleNotification(data[key][k], status); // notification('error', `status: ${error.response.status}`, data[key][k][0]);
+            }
+          });
+        });
+      } else {
+        var _error$response2 = error.response,
+            _status = _error$response2.status,
+            statusText = _error$response2.statusText;
+        Object(_App_components_notification__WEBPACK_IMPORTED_MODULE_2__["default"])("error", "Something went wrong! Please notify us!");
+      }
+    });
+  }
+
+  return Promise.reject(_objectSpread({}, error));
+});
+
+var multipleNotification = function multipleNotification(data, status) {
+  for (var index = 0; index < data.length; index++) {
+    var element = data[index];
+
+    if (typeof element == "string") {
+      Object(_App_components_notification__WEBPACK_IMPORTED_MODULE_2__["default"])("error", element);
+    }
+  }
+};
+
+function onAccessTokenFetched(response) {
+  subscribers = subscribers.filter(function (callback) {
+    return callback(response);
+  });
+}
+
+function addSubscriber(callback) {
+  subscribers.push(callback);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (instance);
+
+
+/***/ }),
+
+/***/ "./resources/react/src/api/endpoint.js":
+/*!*********************************************!*\
+  !*** ./resources/react/src/api/endpoint.js ***!
+  \*********************************************/
+/*! exports provided: endpoint */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "endpoint", function() { return endpoint; });
+var endpoint = {
+  auth: 'auth-token/',
+  user: 'user/'
+};
+
+/***/ }),
+
+/***/ "./resources/react/src/api/index.js":
+/*!******************************************!*\
+  !*** ./resources/react/src/api/index.js ***!
+  \******************************************/
+/*! exports provided: default, endpoints */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "endpoints", function() { return endpoints; });
+/* harmony import */ var _Api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Api */ "./resources/react/src/api/Api.js");
+/* harmony import */ var _endpoint__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./endpoint */ "./resources/react/src/api/endpoint.js");
+
+
+/* harmony default export */ __webpack_exports__["default"] = (_Api__WEBPACK_IMPORTED_MODULE_0__["default"]);
+var endpoints = _endpoint__WEBPACK_IMPORTED_MODULE_1__["endpoint"];
 
 /***/ })
 

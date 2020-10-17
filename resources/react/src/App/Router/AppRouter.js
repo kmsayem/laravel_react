@@ -36,7 +36,6 @@ class AppRouter extends Component {
         <LayoutContentWrapper>
           {routes[userType].map(singleRoute => {
             const { path, exact, ...otherProps } = singleRoute;
-            console.log(singleRoute,'singleRoute')
             return (
               <Route
                 key={singleRoute.path}

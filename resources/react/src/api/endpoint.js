@@ -1,3 +1,4 @@
 export const endpoint = {
-    auth: 'auth/token/',
+    auth: 'auth-token/',
+    user: 'user/',
 };

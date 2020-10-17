@@ -17,7 +17,7 @@ use Illuminate\Http\Request;
 //     return $request->user();
 // });
 
-Route::post('/user-login', 'AuthController@login');
+Route::post('/auth-token', 'AuthController@login');
 
 Route::group(['middleware' => 'jwt.verify'], function () {
     Route::get('/user', 'AuthController@me');

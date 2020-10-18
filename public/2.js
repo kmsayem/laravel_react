@@ -62,9 +62,7 @@ var _default = /*#__PURE__*/function (_Component) {
         alignItems: 'flex-start',
         overflow: 'hidden'
       };
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        style: wisgetPageStyle
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], {
         style: rowStyle,
         gutter: 0,
         justify: "start"
@@ -74,7 +72,7 @@ var _default = /*#__PURE__*/function (_Component) {
         sm: 24,
         xs: 24,
         style: colStyle
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Blank"))));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Blank")));
     }
   }]);
 

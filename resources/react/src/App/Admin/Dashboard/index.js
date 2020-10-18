@@ -24,13 +24,11 @@ export default class extends Component {
     };
 
     return (
-      <div style={wisgetPageStyle}>
-        <Row style={rowStyle} gutter={0} justify="start">
-          <Col lg={16} md={12} sm={24} xs={24} style={colStyle}>
-            <h1>Dashboard</h1>
-          </Col>
-        </Row>
-      </div>
+      <Row style={rowStyle} gutter={0} justify="start">
+        <Col lg={16} md={12} sm={24} xs={24} style={colStyle}>
+          <h1>Dashboard</h1>
+        </Col>
+      </Row>
     );
   }
 }

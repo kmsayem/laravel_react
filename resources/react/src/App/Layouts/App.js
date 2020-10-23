@@ -69,7 +69,7 @@ export class App extends Component {
                     }}
                   >
                     <Content
-                      className="isomorphicContent"
+                      className="antContent"
                       style={styles.content}
                     >
                       <AppRouter {...this.props} />

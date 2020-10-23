@@ -5,12 +5,12 @@ export default props => {
   return (
     <div>
       {props.title
-        ? <BoxTitle className="isoBoxTitle">
+        ? <BoxTitle className="boxTitle">
             {' '}{props.title}{' '}
           </BoxTitle>
         : ''}
       {props.subtitle
-        ? <BoxSubTitle className="isoBoxSubTitle">
+        ? <BoxSubTitle className="boxSubTitle">
             {' '}{props.subtitle}{' '}
           </BoxSubTitle>
         : ''}

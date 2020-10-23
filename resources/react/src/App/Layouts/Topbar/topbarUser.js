@@ -25,17 +25,14 @@ class TopbarUser extends Component {
 
   render() {
     const content = (
-      <TopbarDropdownWrapper className="isoUserDropdown">
-        <a className="isoDropdownLink" href="# ">
+      <TopbarDropdownWrapper className="userDropdown">
+        <a className="dropdownLink" href="# ">
           <IntlMessages id="themeSwitcher.settings" />
         </a>
-        <a className="isoDropdownLink" href="# ">
-          <IntlMessages id="sidebar.feedback" />
-        </a>
-        <a className="isoDropdownLink" href="# ">
+        <a className="dropdownLink" href="# ">
           <IntlMessages id="topbar.help" />
         </a>
-        <a className="isoDropdownLink" onClick={this.props.logout} href="# ">
+        <a className="dropdownLink" onClick={this.props.logout} href="# ">
           <IntlMessages id="topbar.logout" />
         </a>
       </TopbarDropdownWrapper>
@@ -50,7 +47,7 @@ class TopbarUser extends Component {
         arrowPointAtCenter={true}
         placement="bottomLeft"
       >
-        <div className="isoImgWrapper">
+        <div className="imgWrapper">
           <img alt="user" src={'/images/user1.png'} />
           <span className="userActivity online" />
         </div>

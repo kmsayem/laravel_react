@@ -38,14 +38,14 @@ const DashAppHolder = styled.div`
     padding: 0;
   }
 
-  .isoLeftRightComponent {
+  .antRightComponent {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
   }
 
-  .isoCenterComponent {
+  .centerComponent {
     display: flex;
     align-items: center;
     justify-content: center;

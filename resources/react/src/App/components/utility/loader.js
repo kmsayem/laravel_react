@@ -3,9 +3,9 @@ import LoaderComponent from "./styles/loader.style";
 
 export default Loader => (
   <LoaderComponent>
-    <svg className="isoContentLoader" viewBox="0 0 50 50">
+    <svg className="contentLoader" viewBox="0 0 50 50">
       <circle
-        className="isoContentLoaderCircle"
+        className="contentLoaderCircle"
         cx="25"
         cy="25"
         r="20"

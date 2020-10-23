@@ -118,19 +118,19 @@ var SignIn = /*#__PURE__*/function (_Component) {
       // }
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles_signin_style__WEBPACK_IMPORTED_MODULE_8__["default"], {
-        className: "isoSignInPage"
+        className: "signInPage"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "isoLoginContentWrapper"
+        className: "loginContentWrapper"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "isoLoginContent"
+        className: "loginContent"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "isoLogoWrapper"
+        className: "logoWrapper"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/dashboard"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_utility_intlMessages__WEBPACK_IMPORTED_MODULE_7__["default"], {
         id: "page.signInTitle"
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "isoSignInForm"
+        className: "signInForm"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(antd__WEBPACK_IMPORTED_MODULE_4__["Form"], {
         name: "signInForm",
         layout: 'vertical',
@@ -148,7 +148,7 @@ var SignIn = /*#__PURE__*/function (_Component) {
         type: "password",
         placeholder: "Password"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "isoInputWrapper isoLeftRightComponent"
+        className: "InputWrapper antRightComponent"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_App_components_uielements__WEBPACK_IMPORTED_MODULE_3__["Checkbox"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_utility_intlMessages__WEBPACK_IMPORTED_MODULE_7__["default"], {
         id: "page.signInRememberMe"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_App_components_uielements__WEBPACK_IMPORTED_MODULE_3__["Button"], {
@@ -157,11 +157,11 @@ var SignIn = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_utility_intlMessages__WEBPACK_IMPORTED_MODULE_7__["default"], {
         id: "page.signInButton"
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "isoHelperText"
+        className: "helperText"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_utility_intlMessages__WEBPACK_IMPORTED_MODULE_7__["default"], {
         id: "page.signInPreview"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "isoInputWrapper isoOtherLogin"
+        className: "inputWrapper otherLogin"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_App_components_uielements__WEBPACK_IMPORTED_MODULE_3__["Button"], {
         onClick: this.handleLogin,
         type: "primary",
@@ -175,10 +175,10 @@ var SignIn = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_utility_intlMessages__WEBPACK_IMPORTED_MODULE_7__["default"], {
         id: "page.signInGooglePlus"
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "isoCenterComponent isoHelperWrapper"
+        className: "centerComponent helperWrapper"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/forgotpassword",
-        className: "isoForgotPass"
+        className: "forgotPass"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_utility_intlMessages__WEBPACK_IMPORTED_MODULE_7__["default"], {
         id: "page.signInForgotPass"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -217,7 +217,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_theme__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_theme__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _settings_withDirection__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/settings/withDirection */ "./resources/react/src/settings/withDirection.js");
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  min-height: 100vh;\n  height: 100vh;\n  display: flex;\n  justify-content: flex-end;\n  align-items: center;\n  position: relative;\n  background-size: cover;\n  background: url('/images/sign.jpg') no-repeat center center;\n\n  &:before {\n    content: '';\n    width: 100%;\n    height: 100%;\n    display: flex;\n    background-color: rgba(0, 0, 0, 0.6);\n    position: absolute;\n    z-index: 1;\n    top: 0;\n    left: ", ";\n    right: ", ";\n  }\n\n  .isoLoginContentWrapper {\n    width: 500px;\n    height: 100%;\n    overflow-y: auto;\n    z-index: 10;\n    position: relative;\n  }\n\n  .isoLoginContent {\n    min-height: 100%;\n    display: flex;\n    flex-direction: column;\n    padding: 70px 50px;\n    position: relative;\n    background-color: #ffffff;\n\n    @media only screen and (max-width: 767px) {\n      width: 100%;\n      padding: 70px 20px;\n    }\n\n    .isoLogoWrapper {\n      width: 100%;\n      display: flex;\n      margin-bottom: 50px;\n      justify-content: center;\n      flex-shrink: 0;\n\n      a {\n        font-size: 24px;\n        font-weight: 300;\n        line-height: 1;\n        text-transform: uppercase;\n        color: ", ";\n      }\n    }\n\n    .isoSignInForm {\n      width: 100%;\n      display: flex;\n      flex-shrink: 0;\n      flex-direction: column;\n\n      .isoInputWrapper {\n        margin-bottom: 15px;\n\n        &:last-of-type {\n          margin-bottom: 0;\n        }\n\n        input {\n          &::-webkit-input-placeholder {\n            color: ", ";\n          }\n\n          &:-moz-placeholder {\n            color: ", ";\n          }\n\n          &::-moz-placeholder {\n            color: ", ";\n          }\n          &:-ms-input-placeholder {\n            color: ", ";\n          }\n        }\n      }\n\n      .isoHelperText {\n        font-size: 12px;\n        font-weight: 400;\n        line-height: 1.2;\n        color: ", ";\n        padding-left: ", ";\n        padding-right: ", ";\n        margin: 15px 0;\n        position: relative;\n        display: flex;\n        align-items: center;\n\n        &:before {\n          content: '*';\n          color: ", ";\n          padding-right: 3px;\n          font-size: 14px;\n          line-height: 1;\n          position: absolute;\n          top: 2px;\n          left: ", ";\n          right: ", ";\n        }\n      }\n\n      .isoHelperWrapper {\n        margin-top: 35px;\n        flex-direction: column;\n      }\n\n      .isoOtherLogin {\n        padding-top: 40px;\n        margin-top: 35px;\n        border-top: 1px dashed ", ";\n\n        > a {\n          display: flex;\n          margin-bottom: 10px;\n\n          &:last-child {\n            margin-bottom: 0;\n          }\n        }\n\n        button {\n          width: 100%;\n          height: 42px;\n          border: 0;\n          font-weight: 500;\n\n          &.btnFacebook {\n            background-color: #3b5998;\n\n            &:hover {\n              background-color: darken(#3b5998, 5%);\n            }\n          }\n\n          &.btnGooglePlus {\n            background-color: #dd4b39;\n            margin-top: 15px;\n\n            &:hover {\n              background-color: darken(#dd4b39, 5%);\n            }\n          }\n\n          &.btnAuthZero {\n            background-color: #e14615;\n            margin-top: 15px;\n\n            &:hover {\n              background-color: darken(#e14615, 5%);\n            }\n          }\n\n          &.btnFirebase {\n            background-color: ", ";\n            margin-top: 15px;\n\n            &:hover {\n              background-color: ", ";\n            }\n          }\n        }\n      }\n\n      .isoForgotPass {\n        font-size: 12px;\n        color: ", ";\n        margin-bottom: 10px;\n        text-decoration: none;\n\n        &:hover {\n          color: ", ";\n        }\n      }\n\n      button {\n        font-weight: 500;\n      }\n    }\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  width: 100%;\n  min-height: 100vh;\n  height: 100vh;\n  display: flex;\n  justify-content: flex-end;\n  align-items: center;\n  position: relative;\n  background-size: cover;\n  background: url('/images/sign.jpg') no-repeat center center;\n\n  &:before {\n    content: '';\n    width: 100%;\n    height: 100%;\n    display: flex;\n    background-color: rgba(0, 0, 0, 0.6);\n    position: absolute;\n    z-index: 1;\n    top: 0;\n    left: ", ";\n    right: ", ";\n  }\n\n  .loginContentWrapper {\n    width: 500px;\n    height: 100%;\n    overflow-y: auto;\n    z-index: 10;\n    position: relative;\n  }\n\n  .loginContent {\n    min-height: 100%;\n    display: flex;\n    flex-direction: column;\n    padding: 70px 50px;\n    position: relative;\n    background-color: #ffffff;\n\n    @media only screen and (max-width: 767px) {\n      width: 100%;\n      padding: 70px 20px;\n    }\n\n    .logoWrapper {\n      width: 100%;\n      display: flex;\n      margin-bottom: 50px;\n      justify-content: center;\n      flex-shrink: 0;\n\n      a {\n        font-size: 24px;\n        font-weight: 300;\n        line-height: 1;\n        text-transform: uppercase;\n        color: ", ";\n      }\n    }\n\n    .signInForm {\n      width: 100%;\n      display: flex;\n      flex-shrink: 0;\n      flex-direction: column;\n\n      .inputWrapper {\n        margin-bottom: 15px;\n\n        &:last-of-type {\n          margin-bottom: 0;\n        }\n\n        input {\n          &::-webkit-input-placeholder {\n            color: ", ";\n          }\n\n          &:-moz-placeholder {\n            color: ", ";\n          }\n\n          &::-moz-placeholder {\n            color: ", ";\n          }\n          &:-ms-input-placeholder {\n            color: ", ";\n          }\n        }\n      }\n\n      .helperText {\n        font-size: 12px;\n        font-weight: 400;\n        line-height: 1.2;\n        color: ", ";\n        padding-left: ", ";\n        padding-right: ", ";\n        margin: 15px 0;\n        position: relative;\n        display: flex;\n        align-items: center;\n\n        &:before {\n          content: '*';\n          color: ", ";\n          padding-right: 3px;\n          font-size: 14px;\n          line-height: 1;\n          position: absolute;\n          top: 2px;\n          left: ", ";\n          right: ", ";\n        }\n      }\n\n      .helperWrapper {\n        margin-top: 35px;\n        flex-direction: column;\n      }\n\n      .otherLogin {\n        padding-top: 40px;\n        margin-top: 35px;\n        border-top: 1px dashed ", ";\n\n        > a {\n          display: flex;\n          margin-bottom: 10px;\n\n          &:last-child {\n            margin-bottom: 0;\n          }\n        }\n\n        button {\n          width: 100%;\n          height: 42px;\n          border: 0;\n          font-weight: 500;\n\n          &.btnFacebook {\n            background-color: #3b5998;\n\n            &:hover {\n              background-color: darken(#3b5998, 5%);\n            }\n          }\n\n          &.btnGooglePlus {\n            background-color: #dd4b39;\n            margin-top: 15px;\n\n            &:hover {\n              background-color: darken(#dd4b39, 5%);\n            }\n          }\n\n          &.btnAuthZero {\n            background-color: #e14615;\n            margin-top: 15px;\n\n            &:hover {\n              background-color: darken(#e14615, 5%);\n            }\n          }\n\n          &.btnFirebase {\n            background-color: ", ";\n            margin-top: 15px;\n\n            &:hover {\n              background-color: ", ";\n            }\n          }\n        }\n      }\n\n      .forgotPass {\n        font-size: 12px;\n        color: ", ";\n        margin-bottom: 10px;\n        text-decoration: none;\n\n        &:hover {\n          color: ", ";\n        }\n      }\n\n      button {\n        font-weight: 500;\n      }\n    }\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -348,10 +348,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var AntButton = Object(_styles_button_style__WEBPACK_IMPORTED_MODULE_1__["Buttons"])(antd__WEBPACK_IMPORTED_MODULE_0__["Button"]);
-var isoButton = Object(_settings_withDirection__WEBPACK_IMPORTED_MODULE_2__["default"])(AntButton);
+var antButtons = Object(_settings_withDirection__WEBPACK_IMPORTED_MODULE_2__["default"])(AntButton);
 var AntButtonGroup = Object(_styles_button_style__WEBPACK_IMPORTED_MODULE_1__["ButtonsGroup"])(antd__WEBPACK_IMPORTED_MODULE_0__["Button"].Group);
 var ButtonGroup = Object(_settings_withDirection__WEBPACK_IMPORTED_MODULE_2__["default"])(AntButtonGroup);
-/* harmony default export */ __webpack_exports__["default"] = (isoButton);
+/* harmony default export */ __webpack_exports__["default"] = (antButtons);
 
 
 /***/ }),
@@ -619,8 +619,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Paginations = Object(_styles_pagination_style__WEBPACK_IMPORTED_MODULE_1__["default"])(antd__WEBPACK_IMPORTED_MODULE_0__["Pagination"]);
-var isoPagination = Object(_settings_withDirection__WEBPACK_IMPORTED_MODULE_2__["default"])(Paginations);
-/* harmony default export */ __webpack_exports__["default"] = (isoPagination);
+var antPaginations = Object(_settings_withDirection__WEBPACK_IMPORTED_MODULE_2__["default"])(Paginations);
+/* harmony default export */ __webpack_exports__["default"] = (antPaginations);
 
 /***/ }),
 
@@ -641,9 +641,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var WDSelect = Object(_styles_select_style__WEBPACK_IMPORTED_MODULE_1__["AntSelect"])(antd__WEBPACK_IMPORTED_MODULE_0__["Select"]);
-var isoSelect = Object(_settings_withDirection__WEBPACK_IMPORTED_MODULE_2__["default"])(WDSelect);
+var antSelect = Object(_settings_withDirection__WEBPACK_IMPORTED_MODULE_2__["default"])(WDSelect);
 var SelectOption = antd__WEBPACK_IMPORTED_MODULE_0__["Select"].Option;
-/* harmony default export */ __webpack_exports__["default"] = (isoSelect);
+/* harmony default export */ __webpack_exports__["default"] = (antSelect);
 
 
 /***/ }),
@@ -768,7 +768,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  &.ant-btn {\n    display: inline-block;\n    margin-bottom: 0;\n    font-weight: 500;\n    text-align: center;\n    -ms-touch-action: manipulation;\n    touch-action: manipulation;\n    cursor: pointer;\n    background-image: none;\n    border: 1px solid transparent;\n    white-space: nowrap;\n    line-height: 1.5;\n    padding: 0 25px;\n    font-size: 14px;\n    border-radius: 4px;\n    height: 36px;\n    -webkit-user-select: none;\n    -moz-user-select: none;\n    -ms-user-select: none;\n    user-select: none;\n    position: relative;\n    color: ", ";\n    border-color: ", ";\n    ", ";\n\n    &:hover {\n      border-color: ", ";\n      color: ", ";\n    }\n\n    > .anticon + span,\n    > span + .anticon {\n      margin: ", ";\n    }\n\n    .anticon-right {\n      transform: ", ";\n    }\n\n    .anticon-left {\n      transform: ", ";\n    }\n\n    &.ant-btn-primary {\n      background-color: ", ";\n      border-color: ", ";\n\n      &:hover {\n        background-color: ", ";\n        border-color: ", ";\n        color: #fff;\n      }\n    }\n\n    &.ant-btn-sm {\n      padding: 0 15px;\n      height: 28px;\n      font-size: 12px;\n\n      &.ant-btn-loading:not(.ant-btn-circle):not(.ant-btn-circle-outline) {\n        padding: ", ";\n        .anticon {\n          margin: ", ";\n        }\n      }\n    }\n\n    &.ant-btn-lg {\n      padding: 0 35px;\n      font-size: 14px;\n      height: 42px;\n    }\n\n    &.ant-btn-primary {\n      color: #ffffff;\n    }\n\n    &.ant-btn-dashed {\n      border-style: dashed;\n      border-color: ", ";\n\n      &:hover {\n        color: ", ";\n        border-color: ", ";\n      }\n    }\n\n    &.ant-btn-danger {\n      background-color: ", ";\n      border-color: ", ";\n      color: #ffffff;\n\n      &:hover {\n        background-color: ", ";\n        border-color: ", ";\n      }\n\n      &.ant-btn-background-ghost {\n        color: ", ";\n        background-color: transparent;\n        border-color: ", ";\n\n        &:hover {\n          color: ", ";\n          border-color: ", ";\n        }\n      }\n    }\n\n    &.ant-btn-circle,\n    &.ant-btn-circle-outline {\n      width: 35px;\n      padding: 0;\n      font-size: 14px;\n      border-radius: 50%;\n      height: 35px;\n\n      &.ant-btn-sm {\n        padding: 0;\n        height: 28px;\n        width: 28px;\n        font-size: 12px;\n      }\n\n      &.ant-btn-lg {\n        padding: 0;\n        font-size: 14px;\n        height: 42px;\n        width: 42px;\n      }\n    }\n\n    &.ant-btn.disabled,\n    &.ant-btn[disabled],\n    &.ant-btn.disabled:hover,\n    &.ant-btn[disabled]:hover,\n    &.ant-btn.disabled:focus,\n    &.ant-btn[disabled]:focus,\n    &.ant-btn.disabled:active,\n    &.ant-btn[disabled]:active,\n    &.ant-btn.disabled.active,\n    &.ant-btn[disabled].active {\n      color: ", ";\n      background-color: #f7f7f7;\n      border-color: ", ";\n      cursor: not-allowed;\n    }\n\n    &.ant-btn-loading:not(.ant-btn-circle):not(.ant-btn-circle-outline)\n      .anticon {\n      margin: ", ";\n    }\n\n    &.isoButton {\n      display: inline-block;\n      margin-bottom: 0;\n      font-weight: 500;\n      text-align: center;\n      -ms-touch-action: manipulation;\n      touch-action: manipulation;\n      cursor: pointer;\n      background-image: none;\n      border: 0;\n      white-space: nowrap;\n      line-height: 1.5;\n      padding: 0 25px;\n      font-size: 13px;\n      border-radius: 4px;\n      height: 35px;\n      -webkit-user-select: none;\n      -moz-user-select: none;\n      -ms-user-select: none;\n      user-select: none;\n      position: relative;\n      color: #ffffff;\n      background-color: ", ";\n      ", ";\n\n      &:hover {\n        background-color: ", ";\n      }\n\n      &.isoBtnSm {\n        padding: 0 15px;\n        height: 28px;\n        font-size: 12px;\n      }\n\n      &.isoBtnLg {\n        padding: 0 35px;\n        font-size: 14px;\n        height: 42px;\n      }\n    }\n  }\n\n  + .ant-btn-group {\n    margin-left: ", " !important;\n    margin-right: ", " !important;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  &.ant-btn {\n    display: inline-block;\n    margin-bottom: 0;\n    font-weight: 500;\n    text-align: center;\n    -ms-touch-action: manipulation;\n    touch-action: manipulation;\n    cursor: pointer;\n    background-image: none;\n    border: 1px solid transparent;\n    white-space: nowrap;\n    line-height: 1.5;\n    padding: 0 25px;\n    font-size: 14px;\n    border-radius: 4px;\n    height: 36px;\n    -webkit-user-select: none;\n    -moz-user-select: none;\n    -ms-user-select: none;\n    user-select: none;\n    position: relative;\n    color: ", ";\n    border-color: ", ";\n    ", ";\n\n    &:hover {\n      border-color: ", ";\n      color: ", ";\n    }\n\n    > .anticon + span,\n    > span + .anticon {\n      margin: ", ";\n    }\n\n    .anticon-right {\n      transform: ", ";\n    }\n\n    .anticon-left {\n      transform: ", ";\n    }\n\n    &.ant-btn-primary {\n      background-color: ", ";\n      border-color: ", ";\n\n      &:hover {\n        background-color: ", ";\n        border-color: ", ";\n        color: #fff;\n      }\n    }\n\n    &.ant-btn-sm {\n      padding: 0 15px;\n      height: 28px;\n      font-size: 12px;\n\n      &.ant-btn-loading:not(.ant-btn-circle):not(.ant-btn-circle-outline) {\n        padding: ", ";\n        .anticon {\n          margin: ", ";\n        }\n      }\n    }\n\n    &.ant-btn-lg {\n      padding: 0 35px;\n      font-size: 14px;\n      height: 42px;\n    }\n\n    &.ant-btn-primary {\n      color: #ffffff;\n    }\n\n    &.ant-btn-dashed {\n      border-style: dashed;\n      border-color: ", ";\n\n      &:hover {\n        color: ", ";\n        border-color: ", ";\n      }\n    }\n\n    &.ant-btn-danger {\n      background-color: ", ";\n      border-color: ", ";\n      color: #ffffff;\n\n      &:hover {\n        background-color: ", ";\n        border-color: ", ";\n      }\n\n      &.ant-btn-background-ghost {\n        color: ", ";\n        background-color: transparent;\n        border-color: ", ";\n\n        &:hover {\n          color: ", ";\n          border-color: ", ";\n        }\n      }\n    }\n\n    &.ant-btn-circle,\n    &.ant-btn-circle-outline {\n      width: 35px;\n      padding: 0;\n      font-size: 14px;\n      border-radius: 50%;\n      height: 35px;\n\n      &.ant-btn-sm {\n        padding: 0;\n        height: 28px;\n        width: 28px;\n        font-size: 12px;\n      }\n\n      &.ant-btn-lg {\n        padding: 0;\n        font-size: 14px;\n        height: 42px;\n        width: 42px;\n      }\n    }\n\n    &.ant-btn.disabled,\n    &.ant-btn[disabled],\n    &.ant-btn.disabled:hover,\n    &.ant-btn[disabled]:hover,\n    &.ant-btn.disabled:focus,\n    &.ant-btn[disabled]:focus,\n    &.ant-btn.disabled:active,\n    &.ant-btn[disabled]:active,\n    &.ant-btn.disabled.active,\n    &.ant-btn[disabled].active {\n      color: ", ";\n      background-color: #f7f7f7;\n      border-color: ", ";\n      cursor: not-allowed;\n    }\n\n    &.ant-btn-loading:not(.ant-btn-circle):not(.ant-btn-circle-outline)\n      .anticon {\n      margin: ", ";\n    }\n  }\n\n  + .ant-btn-group {\n    margin-left: ", " !important;\n    margin-right: ", " !important;\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -796,7 +796,7 @@ var Buttons = function Buttons(ComponentName) {
     return props['data-rtl'] === 'rtl' ? '0 -17px 0 0' : '0 0 0 -17px';
   }, Object(styled_theme__WEBPACK_IMPORTED_MODULE_1__["palette"])('border', 1), Object(styled_theme__WEBPACK_IMPORTED_MODULE_1__["palette"])('primary', 0), Object(styled_theme__WEBPACK_IMPORTED_MODULE_1__["palette"])('primary', 0), Object(styled_theme__WEBPACK_IMPORTED_MODULE_1__["palette"])('error', 0), Object(styled_theme__WEBPACK_IMPORTED_MODULE_1__["palette"])('error', 0), Object(styled_theme__WEBPACK_IMPORTED_MODULE_1__["palette"])('error', 2), Object(styled_theme__WEBPACK_IMPORTED_MODULE_1__["palette"])('error', 2), Object(styled_theme__WEBPACK_IMPORTED_MODULE_1__["palette"])('error', 0), Object(styled_theme__WEBPACK_IMPORTED_MODULE_1__["palette"])('error', 0), Object(styled_theme__WEBPACK_IMPORTED_MODULE_1__["palette"])('error', 2), Object(styled_theme__WEBPACK_IMPORTED_MODULE_1__["palette"])('error', 2), Object(styled_theme__WEBPACK_IMPORTED_MODULE_1__["palette"])('grayscale', 2), Object(styled_theme__WEBPACK_IMPORTED_MODULE_1__["palette"])('border', 0), function (props) {
     return props['data-rtl'] === 'rtl' ? '0 -14px 0 0' : '0 0 0 -14px';
-  }, Object(styled_theme__WEBPACK_IMPORTED_MODULE_1__["palette"])('primary', 0), Object(_settings_style_util__WEBPACK_IMPORTED_MODULE_2__["transition"])(), Object(styled_theme__WEBPACK_IMPORTED_MODULE_1__["palette"])('primary', 2), function (props) {
+  }, function (props) {
     return props['data-rtl'] === 'rtl' ? '0' : '-1px';
   }, function (props) {
     return props['data-rtl'] === 'rtl' ? '-1px' : '0';
@@ -1446,8 +1446,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var WDTabs = Object(_styles_tab_style__WEBPACK_IMPORTED_MODULE_1__["default"])(antd__WEBPACK_IMPORTED_MODULE_0__["Tabs"]);
 var TabPane = antd__WEBPACK_IMPORTED_MODULE_0__["Tabs"].TabPane;
-var isoTabs = Object(_settings_withDirection__WEBPACK_IMPORTED_MODULE_2__["default"])(WDTabs);
-/* harmony default export */ __webpack_exports__["default"] = (isoTabs);
+var antTabs = Object(_settings_withDirection__WEBPACK_IMPORTED_MODULE_2__["default"])(WDTabs);
+/* harmony default export */ __webpack_exports__["default"] = (antTabs);
 
 
 /***/ }),

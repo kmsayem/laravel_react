@@ -2,7 +2,7 @@ import React from 'react';
 
 export default ({ text = '' }) => (
   <div
-    className="isoHelperText"
+    className="helperText"
     style={{
       display: 'flex',
       alignItems: 'center',

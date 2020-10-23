@@ -54,16 +54,16 @@ class SignIn extends Component {
     //   return <Redirect to={from} />;
     // }
     return (
-      <SignInStyleWrapper className="isoSignInPage">
-        <div className="isoLoginContentWrapper">
-          <div className="isoLoginContent">
-            <div className="isoLogoWrapper">
+      <SignInStyleWrapper className="signInPage">
+        <div className="loginContentWrapper">
+          <div className="loginContent">
+            <div className="logoWrapper">
               <Link to="/dashboard">
                 <IntlMessages id="page.signInTitle" />
               </Link>
             </div>
 
-            <div className="isoSignInForm">
+            <div className="signInForm">
               <Form name="signInForm" layout={'vertical'} onFinish={this.handleLogin}>
                 <Form.Item name="email" label="Email">
                   <Input type="text" placeholder="Email" />
@@ -71,7 +71,7 @@ class SignIn extends Component {
                 <Form.Item name="password" label="Password">
                   <Input type="password" placeholder="Password" />
                 </Form.Item>
-                <div className="isoInputWrapper isoLeftRightComponent">
+                <div className="InputWrapper antRightComponent">
                   <Checkbox>
                     <IntlMessages id="page.signInRememberMe" />
                   </Checkbox>
@@ -80,11 +80,11 @@ class SignIn extends Component {
                   </Button>
                 </div>
 
-                <p className="isoHelperText">
+                <p className="helperText">
                   <IntlMessages id="page.signInPreview" />
                 </p>
 
-                <div className="isoInputWrapper isoOtherLogin">
+                <div className="inputWrapper otherLogin">
                   <Button
                     onClick={this.handleLogin}
                     type="primary"
@@ -100,8 +100,8 @@ class SignIn extends Component {
                     <IntlMessages id="page.signInGooglePlus" />
                   </Button>
                 </div>
-                <div className="isoCenterComponent isoHelperWrapper">
-                  <Link to="/forgotpassword" className="isoForgotPass">
+                <div className="centerComponent helperWrapper">
+                  <Link to="/forgotpassword" className="forgotPass">
                     <IntlMessages id="page.signInForgotPass" />
                   </Link>
                   <Link to="/signup">

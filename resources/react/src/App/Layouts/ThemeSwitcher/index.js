@@ -25,7 +25,7 @@ class ThemeSwitcher extends Component {
 
     return (
       <ThemeSwitcherStyle
-        className={isActivated ? 'isoThemeSwitcher active' : 'isoThemeSwitcher'}
+        className={isActivated ? 'themeSwitcher active' : 'themeSwitcher'}
       >
         <div className="componentTitleWrapper" style={styleButton}>
           <h3 className="componentTitle">
@@ -56,7 +56,7 @@ class ThemeSwitcher extends Component {
             changeTheme={changeTheme}
             selectedId={layoutTheme.themeName}
           />
-          <LanguageSwitcher />
+          {/* <LanguageSwitcher /> */}
         </div>
 
         <button

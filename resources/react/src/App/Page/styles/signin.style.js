@@ -26,7 +26,7 @@ const SignInStyleWrapper = styled.div`
     right: ${props => (props['data-rtl'] === 'rtl' ? '0' : 'inherit')};
   }
 
-  .isoLoginContentWrapper {
+  .loginContentWrapper {
     width: 500px;
     height: 100%;
     overflow-y: auto;
@@ -34,7 +34,7 @@ const SignInStyleWrapper = styled.div`
     position: relative;
   }
 
-  .isoLoginContent {
+  .loginContent {
     min-height: 100%;
     display: flex;
     flex-direction: column;
@@ -47,7 +47,7 @@ const SignInStyleWrapper = styled.div`
       padding: 70px 20px;
     }
 
-    .isoLogoWrapper {
+    .logoWrapper {
       width: 100%;
       display: flex;
       margin-bottom: 50px;
@@ -63,13 +63,13 @@ const SignInStyleWrapper = styled.div`
       }
     }
 
-    .isoSignInForm {
+    .signInForm {
       width: 100%;
       display: flex;
       flex-shrink: 0;
       flex-direction: column;
 
-      .isoInputWrapper {
+      .inputWrapper {
         margin-bottom: 15px;
 
         &:last-of-type {
@@ -94,7 +94,7 @@ const SignInStyleWrapper = styled.div`
         }
       }
 
-      .isoHelperText {
+      .helperText {
         font-size: 12px;
         font-weight: 400;
         line-height: 1.2;
@@ -121,12 +121,12 @@ const SignInStyleWrapper = styled.div`
         }
       }
 
-      .isoHelperWrapper {
+      .helperWrapper {
         margin-top: 35px;
         flex-direction: column;
       }
 
-      .isoOtherLogin {
+      .otherLogin {
         padding-top: 40px;
         margin-top: 35px;
         border-top: 1px dashed ${palette('grayscale', 2)};
@@ -183,7 +183,7 @@ const SignInStyleWrapper = styled.div`
         }
       }
 
-      .isoForgotPass {
+      .forgotPass {
         font-size: 12px;
         color: ${palette('text', 3)};
         margin-bottom: 10px;

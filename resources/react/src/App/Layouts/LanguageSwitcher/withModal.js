@@ -16,7 +16,7 @@ class LanguageSwitcher extends Component {
       changeLanguage
     } = this.props;
     return (
-      <div className="isoButtonWrapper">
+      <div className="buttonWrapper">
         <Button type="primary" className="" onClick={switchActivation}>
           Switch Language
         </Button>

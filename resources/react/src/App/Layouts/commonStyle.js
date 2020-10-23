@@ -39,7 +39,7 @@ const AppHolder = styled.div`
     }
   }
 
-  .isoLayoutContent {
+  .antLayoutContent {
     width: 100%;
     padding: 35px;
     background-color: #ffffff;
@@ -47,7 +47,7 @@ const AppHolder = styled.div`
     height: 100%;
   }
 
-  .isomorphicLayout {
+  .antLayout {
     width: calc(100% - 240px);
     flex-shrink: 0;
     overflow-x: hidden !important;

@@ -3,8 +3,8 @@ import { AntSelect } from './styles/select.style';
 import WithDirection from '@/settings/withDirection';
 
 const WDSelect = AntSelect(Select);
-const isoSelect = WithDirection(WDSelect);
+const antSelect = WithDirection(WDSelect);
 const SelectOption = Select.Option;
 
-export default isoSelect;
+export default antSelect;
 export { SelectOption };

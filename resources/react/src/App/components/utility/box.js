@@ -4,7 +4,7 @@ import { BoxWrapper } from './styles/box.style';
 
 export default props => (
   <BoxWrapper
-    className={`${props.className} isoBoxWrapper`}
+    className={`${props.className} boxWrapper`}
     style={props.style}
   >
     <BoxTitleWrapper title={props.title} subtitle={props.subtitle} />

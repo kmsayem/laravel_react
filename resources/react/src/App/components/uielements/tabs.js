@@ -4,7 +4,7 @@ import WithDirection from '@/settings/withDirection';
 
 const WDTabs = AntTab(Tabs);
 const TabPane = Tabs.TabPane;
-const isoTabs = WithDirection(WDTabs);
+const antTabs = WithDirection(WDTabs);
 
-export default isoTabs;
+export default antTabs;
 export { TabPane };

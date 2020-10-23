@@ -23,10 +23,10 @@ class Topbar extends Component {
         <Header
           style={styling}
           className={
-            collapsed ? "isomorphicTopbar collapsed" : "isomorphicTopbar"
+            collapsed ? "topbar collapsed" : "topbar"
           }
         >
-          <div className="isoLeft">
+          <div className="antLeft">
             <button
               className={
                 collapsed ? "triggerBtn menuCollapsed" : "triggerBtn menuOpen"
@@ -36,10 +36,10 @@ class Topbar extends Component {
             />
           </div>
 
-          <ul className="isoRight">
+          <ul className="antRight">
             <li
               onClick={() => this.setState({ selectedItem: "user" })}
-              className="isoUser"
+              className="antUser"
             >
               <TopbarUser locale={locale} />
             </li>

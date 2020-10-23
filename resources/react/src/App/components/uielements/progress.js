@@ -3,6 +3,6 @@ import AntProgress from './styles/progress.style';
 import WithDirection from '@/settings/withDirection';
 
 const WDProgress = AntProgress(Progress);
-const isoProgress = WithDirection(WDProgress);
+const antProgress = WithDirection(WDProgress);
 
-export default isoProgress;
+export default antProgress;

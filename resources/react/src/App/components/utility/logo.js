@@ -4,7 +4,7 @@ import { siteConfig } from '@/settings';
 
 export default ({ collapsed }) => {
   return (
-    <div className="isoLogoWrapper">
+    <div className="logoWrapper">
       {collapsed ? (
         <div>
           <h3>

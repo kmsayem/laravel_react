@@ -161,48 +161,6 @@ const Buttons = ComponentName => styled(ComponentName)`
       margin: ${props =>
         props['data-rtl'] === 'rtl' ? '0 -14px 0 0' : '0 0 0 -14px'};
     }
-
-    &.isoButton {
-      display: inline-block;
-      margin-bottom: 0;
-      font-weight: 500;
-      text-align: center;
-      -ms-touch-action: manipulation;
-      touch-action: manipulation;
-      cursor: pointer;
-      background-image: none;
-      border: 0;
-      white-space: nowrap;
-      line-height: 1.5;
-      padding: 0 25px;
-      font-size: 13px;
-      border-radius: 4px;
-      height: 35px;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-      position: relative;
-      color: #ffffff;
-      background-color: ${palette('primary', 0)};
-      ${transition()};
-
-      &:hover {
-        background-color: ${palette('primary', 2)};
-      }
-
-      &.isoBtnSm {
-        padding: 0 15px;
-        height: 28px;
-        font-size: 12px;
-      }
-
-      &.isoBtnLg {
-        padding: 0 35px;
-        font-size: 14px;
-        height: 42px;
-      }
-    }
   }
 
   + .ant-btn-group {

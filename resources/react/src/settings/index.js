@@ -2,9 +2,9 @@ export default {
   apiUrl: 'http://yoursite.com/api/'
 };
 const siteConfig = {
-  siteName: 'ISOMORPHIC',
+  siteName: 'Laravel React',
   siteIcon: 'ion-flash',
-  footerText: 'Isomorphic ©2017 Created by RedQ, Inc'
+  footerText: 'Laravel React ©2017 Created by RedQ, Inc'
 };
 
 const themeConfig = {
@@ -18,38 +18,7 @@ const AlgoliaSearchConfig = {
   appId: '',
   apiKey: ''
 };
-const Auth0Config = {
-  domain: '',
-  clientID: '',
-  allowedConnections: ['Username-Password-Authentication'],
-  rememberLastLogin: true,
-  language: 'en',
-  closable: true,
-  options: {
-    auth: {
-      autoParseHash: true,
-      redirect: true,
-      redirectUrl: 'http://localhost:3000/auth0loginCallback'
-    },
-    languageDictionary: {
-      title: 'Isomorphic',
-      emailInputPlaceholder: 'demo@gmail.com',
-      passwordInputPlaceholder: 'demodemo'
-    },
-    theme: {
-      labeledSubmitButton: true,
-      logo: '',
-      primaryColor: '#E14615',
-      authButtons: {
-        connectionName: {
-          displayName: 'Log In',
-          primaryColor: '#b7b7b7',
-          foregroundColor: '#000000'
-        }
-      }
-    }
-  }
-};
+
 const firebaseConfig = {
   apiKey: '',
   authDomain: '',
@@ -73,7 +42,6 @@ export {
   themeConfig,
   language,
   AlgoliaSearchConfig,
-  Auth0Config,
   firebaseConfig,
   googleConfig,
   mapboxConfig,

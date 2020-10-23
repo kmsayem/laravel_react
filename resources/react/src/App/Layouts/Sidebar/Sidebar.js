@@ -76,7 +76,7 @@ class Sidebar extends Component {
         <SubMenu
           key={key}
           title={
-            <span className="isoMenuHolder" style={submenuColor}>
+            <span className="menuHolder" style={submenuColor}>
               <i className={leftIcon} />
               <span className="nav-text">
                 <IntlMessages id={label} />
@@ -102,7 +102,7 @@ class Sidebar extends Component {
     return (
       <Menu.Item key={key}>
         <Link to={`${url}/${key}`}>
-          <span className="isoMenuHolder" style={submenuColor}>
+          <span className="menuHolder" style={submenuColor}>
             <i className={leftIcon} />
             <span className="nav-text">
               <IntlMessages id={label} />
@@ -147,7 +147,7 @@ class Sidebar extends Component {
           collapsible={true}
           collapsed={collapsed}
           width={240}
-          className="isomorphicSidebar"
+          className="sidebar"
           onMouseEnter={onMouseEnter}
           onMouseLeave={onMouseLeave}
           style={styling}
@@ -157,7 +157,7 @@ class Sidebar extends Component {
             <Menu
               onClick={this.handleClick}
               theme="dark"
-              className="isoDashboardMenu"
+              className="dashboardMenu"
               mode={mode}
               openKeys={collapsed ? [] : app.openKeys}
               selectedKeys={app.current}

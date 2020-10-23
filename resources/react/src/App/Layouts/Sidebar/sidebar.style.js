@@ -4,7 +4,7 @@ import { transition, borderRadius } from '@/settings/style-util';
 import WithDirection from '@/settings/withDirection';
 
 const SidebarWrapper = styled.div`
-  .isomorphicSidebar {
+  .sidebar {
     z-index: 1000;
     background: ${palette('secondary', 0)};
     width: 280px;
@@ -28,7 +28,7 @@ const SidebarWrapper = styled.div`
       }
     }
 
-    .isoLogoWrapper {
+    .logoWrapper {
       height: 70px;
       background: rgba(0, 0, 0, 0.3);
       margin: 0;
@@ -52,7 +52,7 @@ const SidebarWrapper = styled.div`
     }
 
     &.ant-layout-sider-collapsed {
-      .isoLogoWrapper {
+      .logoWrapper {
         padding: 0;
 
         h3 {
@@ -65,7 +65,7 @@ const SidebarWrapper = styled.div`
       }
     }
 
-    .isoDashboardMenu {
+    .dashboardMenu {
       padding-top: 35px;
       padding-bottom: 35px;
       background: transparent;
@@ -85,7 +85,7 @@ const SidebarWrapper = styled.div`
         margin: 0;
       }
 
-      .isoMenuHolder {
+      .menuHolder {
         display: flex;
         align-items: center;
 

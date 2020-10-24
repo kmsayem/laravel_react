@@ -101,10 +101,10 @@ class SignIn extends Component {
                   </Button>
                 </div>
                 <div className="centerComponent helperWrapper">
-                  <Link to="/forgotpassword" className="forgotPass">
+                  <Link to="#" className="forgotPass">
                     <IntlMessages id="page.signInForgotPass" />
                   </Link>
-                  <Link to="/signup">
+                  <Link to="#">
                     <IntlMessages id="page.signInCreateAccount" />
                   </Link>
                 </div>
